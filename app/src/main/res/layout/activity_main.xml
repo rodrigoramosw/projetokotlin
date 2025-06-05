@@ -1,38 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="24dp"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#0D274D"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:text="Login"
-        android:textSize="24sp"
-        android:layout_marginBottom="24dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <!-- Card com fundo amarelo claro -->
+    <LinearLayout
+        android:id="@+id/cardLogin"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_background"
+        android:padding="24dp">
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:padding="12dp" />
+        <!-- Ícone do usuário centralizado -->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_user"
+            android:background="@drawable/round_circle"
+            android:padding="24dp" />
 
-    <EditText
-        android:id="@+id/etSenha"
-        android:hint="Senha"
-        android:inputType="textPassword"
-        android:layout_marginTop="12dp"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:padding="12dp" />
+        <!-- Campo de email -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="24dp">
 
-    <Button
-        android:id="@+id/btnEntrar"
-        android:text="Entrar"
-        android:layout_marginTop="24dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_person"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="User Icon" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/input_border"
+                android:hint="Digite seu email ou nome"
+                android:padding="12dp"
+                android:textColorHint="#888" />
+        </LinearLayout>
+
+        <!-- Campo de senha -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_lock"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="Lock Icon" />
+
+            <EditText
+                android:id="@+id/etSenha"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:hint="Digite sua senha"
+                android:background="@drawable/input_border"
+                android:padding="12dp"
+                android:textColorHint="#888"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+        <!-- Botão Entrar -->
+        <Button
+            android:id="@+id/btnEntrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="#160B0B"
+            android:padding="14dp"
+            android:text="Entrar"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</RelativeLayout>
